@@ -1,0 +1,26 @@
+{
+  "name": "Brainwash Yourself",
+  "description": "Brainwash yourself with the subliminal messages you choose",
+  "version": "1.0",
+  "icons": { "128": "icon.png" },
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*", "storage"
+  ],
+  "web_accessible_resources": ["flower.jpg"],
+  "browser_action": {
+      "default_title": "Toggle Brainwash on/off",
+      "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["jquery-2.2.0.min.js", "myscript.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  }, 
+ "options_page": "options.html",  
+  "manifest_version": 2
+}
